@@ -41,7 +41,7 @@ var settings = {
 		},
 		sm: {
 			width: '768px',
-			fields: '15px',/* set fields only if you want to change container.fields */
+			fields: '30px',/* set fields only if you want to change container.fields */
 			offset: '0px'
 		},
 		xs: {
