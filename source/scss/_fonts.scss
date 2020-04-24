@@ -1,0 +1,15 @@
+@mixin font-face($font-family, $path, $weight: normal, $style: normal)
+	{
+		@font-face {
+			font-family: $font-family;
+			font-weight: $weight;
+			font-style: $style;
+			src: url('#{$path}.woff2') format('woff2'), url('#{$path}.ttf') format('truetype');
+		}
+	}
+
+	//для nectarin.ru/bitrix оставляем путь таким же
+@include font-face('AvenirNext-Bold', '../fonts/AvenirNext/AvenirNext-Bold/AvenirNext-Bold', 700);
+@include font-face('AvenirNext-Medium', '../fonts/AvenirNext/AvenirNext-Medium/AvenirNext-Medium', 500);
+@include font-face('AvenirNext-Regular', '../fonts/AvenirNext/AvenirNext-Regular/AvenirNext-Regular', 400);
+@include font-face('Impact-Regular', '../fonts/Impact/Impact-Regular/Impact-Regular', 400);

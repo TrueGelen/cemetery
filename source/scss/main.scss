@@ -1,0 +1,533 @@
+@import 'smart-grid';
+@import '_normalize';
+@import '_fonts';
+@import 'swiper.min.css';
+
+///---------common styles ----------------------
+
+html {
+	// font-size: 20px;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+img{
+	margin: 0;
+	padding: 0;
+	width: 100%;	
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+body, div, h1, h2, h3, h4, p, input {
+	margin: 0;
+	padding: 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.container {	
+	// border: 1px solid #fff;
+	position: relative;
+	@include wrapper();
+	// max-width: 810px;
+	// border: 1px solid red;
+	// overflow: hidden;
+}
+
+.page{
+	position: relative;
+	max-width: 1920px;
+}
+
+.asideColumn{
+	position: fixed;
+	z-index: 10;
+	width: 185px;
+	height: 100vh;
+	padding: 20px 0 10px 25px;
+	background-color: #fff;
+	border-right: 1px solid #e5e5e5;
+
+	@include to(1023px){
+		display: none;
+	}
+
+	& > p{
+	}
+}
+
+.pageWrap{
+	padding-left: 187px;
+
+	@include to(1023px){
+		padding-left: 0;
+	}
+}
+
+.uniqueizer11221{
+	max-width: 1920px;
+	background-color: #000;
+	background-image: url(../img/bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	.mainTitle{
+		font-family: Impact-Regular, sans-serif;
+		font-weight: 400;
+		color: #c50000;
+		font-size: 30px;
+		text-transform: uppercase;
+		line-height: 1.2;
+	}
+
+	.mainText{
+		margin: 20px 0;
+		font-family: AvenirNext-Medium, sans-serif;
+		font-size: 16px;
+		color: #fff;
+		line-height: 1.2;
+		text-shadow: 0px 0px 177.84px rgba(40, 40, 40, 0.64);
+		text-align: justify;
+		text-align-last: center;
+
+		@include xxs(font-size, 14px);
+	}
+
+	.about{
+		position: relative;
+		line-height: 1.15;
+		text-align: center;
+
+		padding: 15px 0 0 0;
+		
+		&__logo{
+			width: 350px;
+
+			@include sm(width, 200px);
+		}
+
+		&__title{
+			display: block;
+			margin: 10px auto 0 auto;
+			width: 100%;
+		}
+
+		.task{
+			padding: 45px 0 0 0;
+		}
+	
+		.mechanics{
+			padding: 45px 0 0 0;
+		}
+	}
+
+	.results{
+		position: relative;
+		line-height: 1.15;
+		text-align: center;
+
+		padding: 35px 0 0 0;
+
+		&__content{
+			position: relative;
+			width: 100%;
+		}
+
+		&__btn{
+			display: inline-block;
+			margin-top: 20px;
+			font-family: Impact-Regular, sans-serif;
+			font-size: 20px;
+			padding: 15px 40px;
+			border-radius: 15px;
+			background-color:#c60000;
+			color: #fff;
+			box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.7);
+
+			@include xs-block{
+				font-size: 18px;
+				padding: 10px 20px;
+			}
+		}
+
+		.figures{
+			display: flex;
+			justify-content: space-around;
+			margin-top: 15px;
+
+			@include xs(justify-content, space-between);
+
+			&__figure{
+				font-family: Impact-Regular, sans-serif;
+				font-weight: 400;
+				color: #c50000;
+				font-size: 70px;
+				text-transform: uppercase;
+				line-height: 1.15;
+
+				@include sm(font-size, 40px);
+				@include xs(font-size, 30px);
+				@include xxs(font-size, 26px);
+			}
+
+			&__title{
+				font-family: Impact-Regular, sans-serif;
+				font-weight: 400;
+				color: #c50000;
+				font-size: 30px;
+				text-transform: uppercase;
+				line-height: 1.2;
+
+				@include sm(font-size, 25px);
+				@include xs(font-size, 20px);
+				@include xxs(font-size, 16px);
+			}
+
+			&__text{
+
+				@include sm-block{
+					margin-top: 10px;
+					font-size: 14px;
+				}
+				
+				@include xs(font-size, 2.2vw);
+				@include xxs(font-size, 2.7vw);
+			}
+		}
+	}
+
+	.comment{
+		position: relative;
+		line-height: 1.15;
+		text-align: center;
+
+		padding: 115px 0 0 0;
+
+		&__container{
+			// border: 1px solid #f0d;
+			max-width: 890px;
+		}
+
+		&__content{
+			// border: 1px solid #fff;
+			position: relative;
+			margin-top: 20px;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		&__photo{
+			width: 135px;
+			margin-right: -35px;
+			transform: translateY(20%);
+
+			@include to(1100px){
+				width: 15%;
+			}
+
+			@include sm-block{
+				position: absolute;
+				width: 10%;
+				top: 30%;
+				margin-right: 0;
+				transform: translateY(0%);
+			}
+
+			@include to (600px){
+				display: none;
+			}
+		}
+
+		&__border{
+			width: 725px;
+
+			@include to(1100px){
+				width: 90%;
+			}
+
+			@include sm-block{
+				width: 95%;
+				margin-left: auto;
+				margin-right: 0;
+			};
+
+			@include to(600px){
+				width: 106%;
+				margin-left: -7%;
+				margin-right: auto;
+			}
+
+			@include to(520px){
+				display: none;
+				width: 100%;
+				margin-left: 0;
+			}
+		}
+
+		&__commentBlock{
+			// border: 1px solid rgb(212, 71, 71);
+			position: absolute;
+			top: 50%;
+			right: 25px;
+			transform: translate(0, -50%);
+			text-align: start;
+			max-width: 615px;
+
+			@include to(1100px){
+				max-width: 75%;
+			}
+
+			@include sm-block{
+				max-width: 83%;
+				right: 15px;
+			}
+
+			@include to (600px){
+				max-width: 92%;
+				right: 17px;
+			}
+
+			@include to(520px){
+				position: relative;
+				top: 0;
+				right: auto;
+				transform: translate(0);
+				width: 100%;
+				max-width: none;
+			}
+		}
+
+		&__quote{
+			vertical-align: bottom;
+			width: 40px;
+			float: left;
+			margin-right: 15px;
+
+			@include sm(width, 25px);
+		}
+
+		&__text{
+			font-family: AvenirNext-Medium, sans-serif;
+			margin: 0;
+			text-align-last: right;
+
+			@include to(1100px){
+				font-size: 14px;
+			}
+
+			@include sm(font-size, 12px);
+
+			@include to(520px){
+				font-size: 14px;
+			}
+		}
+
+		&__person{
+			font-family: AvenirNext-Regular, sans-serif;
+			color: #fff;
+			text-align: right;
+			line-height: 1.2;
+			font-size: 14px;
+			margin-top: 15px;
+
+			@include to(1100px){
+				font-size: 12px;
+			}
+
+			@include sm(font-size, 11px);
+
+			@include to(520px){
+				font-size: 12px;
+			}
+		}
+	}
+	
+	.sliderSection{
+		position: relative;
+		line-height: 1.15;
+		text-align: center;
+
+		padding: 125px 0 0 0;
+
+		&__wrapperSwiper{
+      // border: 1px solid blue;
+      position: relative;			
+			width: 100%;
+			text-align: center;
+
+			margin-top: -50px;
+
+			@include md(margin-top, 0);
+		}
+
+		&__swiper-container{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			overflow: hidden;
+			
+			max-width: 300px;
+
+			@include from(1025px){
+				cursor: pointer;
+			}
+
+			@include to(830px){
+				width: 38%;
+			}
+
+			@include to(520px){
+				width: 35%;
+			}
+
+			// @include xxs(width, 32%);
+		}
+
+    &__phonebg{
+			// border: 1px solid red;
+			max-width: 770px;
+			width: 100%;
+		}
+		
+		.swiper-pagination-gravestone{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 15%;
+		}
+
+		.swiper-pagination-bullet{
+			opacity: 1;
+			width: 10px;
+			height: 10px;
+			background: #fff;
+			margin: 0px 10px;
+
+			&-active{
+				background: #c50000;
+			}
+		}
+
+		.slide{
+
+			&_1{
+				transform: translateY(25%);
+			}
+
+			&_2{
+			}
+
+			&_3{
+				
+			}
+
+			&_4{
+				transform: translateY(25%);				
+			}
+
+			&_5{
+				transform: translateY(25%);
+			}
+		}
+	}
+
+	.team{
+    position: relative;
+    line-height: 1.15;
+		text-align: center;
+
+		margin-top: -4%;
+		padding-bottom: 28vw;
+
+		@include from(1920px){
+			padding-bottom: 500px;
+		}
+
+		@include md(padding-bottom, 150px);
+		@include sm(padding-bottom, 100px);
+		@include xs(padding-bottom, 80px);
+		@include xxs(padding-bottom, 60px);
+
+    &__secondTittle{
+			margin-top: 50px;
+		}
+		
+
+    &__block{
+      
+    }
+
+    &__members{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+			margin: 0 -20px;
+			
+			@include sm(margin, 0 -15px);
+		}
+  }
+
+  .member{
+		// border: 1px solid red;
+		position: relative;
+		line-height: 1.15;
+
+		max-width: 180px;
+
+		text-align: center;
+		margin: 20px;
+
+		@include sm(margin, 15px);
+		
+		&__photo{
+			// width: 100%;
+			width: 140px;
+			height: 140px;
+		}
+
+		&__name{
+			font-family: AvenirNext-Bold, sans-serif;
+			font-size: 16px;
+			margin-top: 15px;
+			color: #c50000;
+
+			@include sm(font-size, 14px);
+		}
+
+		&__position{
+			font-family: AvenirNext-Regular, sans-serif;
+			// font-weight: thin;
+			font-size: 14px;
+			color: #fff;
+			@include sm(font-size, 12px);
+		}
+	}
+}
